@@ -5,7 +5,6 @@ from werkzeug import generate_password_hash, check_password_hash
 mysql = MySQL()
 app = Flask(__name__)
 
-# MySQL configurations
 app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = ''
 app.config['MYSQL_DATABASE_DB'] = 'BucketList'
@@ -29,10 +28,7 @@ def signUp():
         _email = request.form['inputEmail']
         _password = request.form['inputPassword']
 
-        # validate the received values
         if _name and _email and _password:
-
-            # All Good, let's call MySQL
 
             conn = mysql.connect()
             cursor = conn.cursor()
