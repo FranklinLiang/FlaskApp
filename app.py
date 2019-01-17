@@ -16,6 +16,10 @@ mysql.init_app(app)
 def main():
     return render_template('index.html')
 
+@app.route('/ModalTest')
+def showModalTest():
+    return render_template('modaltest.html')
+
 @app.route('/showSignUp')
 def showSignUp():
     return render_template('signup.html')
